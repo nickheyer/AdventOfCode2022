@@ -73,14 +73,16 @@ def part_two():
 
         if cyc_num != 0 and cyc_num % 40 == 0:
             crt_str += "\n"
-         
+        
+        
+        
         if cyc_num % 40 in [x_value-1, x_value, x_value+1]:
             crt_str += "#"
-        else:
+        elif cyc_num < 240:
             crt_str += "."
         
-
         cyc_num += 1
+        
 
         return cyc_num, crt_str
 
