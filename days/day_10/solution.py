@@ -65,20 +65,21 @@ def part_two():
     inp = get_input("input.txt")
     x_value = 1
 
-    crt = "\n"
+    crt = "\n#"
 
     cycle_num = 1
 
     def adv_cycle(cyc_num, crt_str):
-  
+
+        if cyc_num != 0 and cyc_num % 40 == 0:
+            crt_str += "\n"
+         
         if cyc_num % 40 in [x_value-1, x_value, x_value+1]:
             crt_str += "#"
         else:
             crt_str += "."
         
-        if cyc_num != 0 and cyc_num % 40 == 0:
-            crt_str += "\n"
-        
+
         cyc_num += 1
 
         return cyc_num, crt_str
