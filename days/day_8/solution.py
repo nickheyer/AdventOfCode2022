@@ -50,7 +50,6 @@ def part_two():
     score = 0
 
     for i, line in enumerate(inp):
-        #Check left and right with double pointer method
         for j, tree in enumerate(line):
 
             l = r = u = d = 0
