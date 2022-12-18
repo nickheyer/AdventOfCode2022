@@ -64,7 +64,7 @@ class Monkey:
         self.activity += 1
 
         if self.op == "*":
-            old = old * self.op_i if self.op_i != "old" else old * old
+            old = old * self.op_i if self.op_i != "old" else old ** 2
         elif self.op == "+":
             old = old + self.op_i if self.op_i != "old" else old + old
 
@@ -112,8 +112,7 @@ def load_monkeys(file_name, wr=True):
     if Monkey.monkey_list:
         Monkey.monkey_list = list()
     for i, m in inp.items():
-        Monkey(i, m["items"], m["operator"], m["op_int"], m["test"], m["test_true"], m["test_false"], worry_reduction=wr)
-    
+        Monkey(i, m["items"], m["operator"], m["op_int"], m["test"], m["test_true"], m["test_false"], worry_reduction=wr) 
 
 def part_one():
     load_monkeys("input.txt")
@@ -126,8 +125,6 @@ def part_one():
             monkey.inspect_items(verbose = False)
 
     return Monkey.two_most_active()
-
-
 
 def part_two():
     load_monkeys("input.txt", wr=False)
